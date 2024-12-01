@@ -21,5 +21,5 @@ func (h *LogHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	handler := &LogHandler{}
-	http.ListenAndServe(":1337", handler)
+	http.ListenAndServe(":80", handler)
 }
