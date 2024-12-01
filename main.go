@@ -13,5 +13,11 @@ func main() {
 		log.Print(string(bytes))
 	})
 
+	http.HandleFunc("/bar.png", func(w http.ResponseWriter, r *http.Request) {
+		bytes, _ := io.ReadAll(r.Body)
+		log.Print(r.URL.RawQuery)
+		log.Print(string(bytes))
+	})
+
 	http.ListenAndServe(":80", nil)
 }
